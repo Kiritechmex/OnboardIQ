@@ -1,0 +1,32 @@
+{
+  "users": [
+    {"id":"u-admin","name":"Admin User","email":"admin@demo.com","password":"demo123","role":"ADMIN","organizationId":"org-demo","department":"Administration"},
+    {"id":"u-hr","name":"HR User","email":"hr@demo.com","password":"demo123","role":"HR","organizationId":"org-demo","department":"HR"},
+    {"id":"u-it","name":"IT User","email":"it@demo.com","password":"demo123","role":"IT","organizationId":"org-demo","department":"IT"},
+    {"id":"u-fac","name":"Facilities User","email":"facilities@demo.com","password":"demo123","role":"FACILITIES","organizationId":"org-demo","department":"Facilities"},
+    {"id":"u-manager","name":"Engineering Manager","email":"manager@demo.com","password":"demo123","role":"MANAGER","organizationId":"org-demo","department":"Engineering"},
+    {"id":"u-employee","name":"Arjun Kumar","email":"employee@demo.com","password":"demo123","role":"EMPLOYEE","organizationId":"org-demo","department":"Engineering","employeeId":"emp-arjun"}
+  ],
+  "employees": [
+    {
+      "id":"emp-arjun","organizationId":"org-demo","name":"Arjun Kumar","email":"arjun@demo.com",
+      "employeeCode":"EMP001","department":"Engineering","designation":"Software Engineer",
+      "manager":"Engineering Manager","joiningDate":"2026-10-02","location":"Dindigul",
+      "status":"AT_RISK","readiness":80,"createdAt":"2026-09-29T10:00:00.000Z"
+    }
+  ],
+  "tasks": [
+    {"id":"t1","employeeId":"emp-arjun","department":"HR","name":"Verify documents","description":"Verify identity and employment documents.","assignedRole":"HR","status":"VERIFIED","priority":"HIGH","deadline":"2026-09-30","dependencyId":null,"mandatory":true,"evidence":"Documents checked in HR system."},
+    {"id":"t2","employeeId":"emp-arjun","department":"IT","name":"Create email account","description":"Create corporate email account.","assignedRole":"IT","status":"VERIFIED","priority":"HIGH","deadline":"2026-09-30","dependencyId":"t1","mandatory":true,"evidence":"Account: arjun@demo.com active."},
+    {"id":"t3","employeeId":"emp-arjun","department":"IT","name":"Prepare laptop","description":"Assign laptop and install required software.","assignedRole":"IT","status":"VERIFIED","priority":"HIGH","deadline":"2026-09-30","dependencyId":"t2","mandatory":true,"evidence":"Asset: LAP-1024; software verified."},
+    {"id":"t4","employeeId":"emp-arjun","department":"FACILITIES","name":"Activate access card","description":"Create and activate building access card.","assignedRole":"FACILITIES","status":"PENDING","priority":"CRITICAL","deadline":"2026-10-01","dependencyId":null,"mandatory":true,"evidence":""},
+    {"id":"t5","employeeId":"emp-arjun","department":"FACILITIES","name":"Allocate workspace","description":"Allocate desk/workspace.","assignedRole":"FACILITIES","status":"VERIFIED","priority":"MEDIUM","deadline":"2026-10-01","dependencyId":null,"mandatory":true,"evidence":"Desk A-14 allocated."},
+    {"id":"t6","employeeId":"emp-arjun","department":"MANAGER","name":"Assign mentor","description":"Assign a team mentor and initial project.","assignedRole":"MANAGER","status":"VERIFIED","priority":"MEDIUM","deadline":"2026-10-01","dependencyId":null,"mandatory":true,"evidence":"Mentor: Priya."}
+  ],
+  "notifications": [
+    {"id":"n1","userId":"u-fac","title":"At-risk onboarding","message":"Arjun's access card is pending and joining is tomorrow.","type":"RISK","read":false,"createdAt":"2026-09-29T12:00:00.000Z"},
+    {"id":"n2","userId":"u-hr","title":"At-risk onboarding","message":"Arjun is 80% Day-1 ready. Access card is blocking readiness.","type":"RISK","read":false,"createdAt":"2026-09-29T12:00:00.000Z"}
+  ],
+  "escalations": [],
+  "auditLogs": []
+}

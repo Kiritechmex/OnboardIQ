@@ -1,0 +1,12 @@
+node_modules/
+.env
+.env.*
+!.env.example
+npm-debug.log*
+.vite/
+dist/
+.DS_Store
+
+backend/uploads/
+
+.env
